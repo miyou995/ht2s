@@ -1,0 +1,95 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info for LANGUAGE_CODE as lang %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% load change_lang %}
+<!DOCTYPE html>
+    <html lang="{{ request.LANGUAGE_CODE }}" {% if request.LANGUAGE_CODE == 'ar' %} dir="rtl" {% endif %}>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block extra_seo %}
+			<title>{{business.title}}</title>
+			<meta name="keywords" content="{{business.meta_keyword}}">
+			<meta name="description" content="{{business.meta_description}}">
+			<meta name="author" content="{{business.name}}" />
+			<meta name="robots" content="index,follow" />
+			<meta name="apple-mobile-web-app-title" content="{{business.title}}">
+			<meta name="application-name" content="{{business.name}}">
+			<meta property="og:url" content="" />
+			<meta property="og:title" content="{{business.title}}" />
+			<meta property="og:type" content="Services" />
+			<meta property="og:site_name" content="{{business.name}} | {{business.title}}"/>
+            <title>{{business.title}}</title>
+		{% endblock extra_seo %}
+		{% if business.favicon  %}
+        <link rel="shortcut icon" type="image/x-icon" href="{{business.favicon.url}}">
+		{% endif %}
+        <link rel="canonical" href="" />
+        <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/plugins/fontawesome-5.css' %}">
+        <link rel="stylesheet" href="{% static 'css/plugins/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/plugins/unicons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+        {% if request.LANGUAGE_CODE == 'ar' %}
+        <link rel="stylesheet" href="{% static 'rtl/css/plugins/swiper.min.css' %}">
+        <link rel="stylesheet" href="{% static 'rtl/css/plugins/fontawesome-5.css' %}">
+        <link rel="stylesheet" href="{% static 'rtl/css/plugins/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'rtl/css/plugins/unicons.css' %}">
+        <link rel="stylesheet" href="{% static 'rtl/css/vendor/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'rtl/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+        {% endif %} 
+    </head>
+    <body>
+        <style>
+            :root {
+
+                --color-primary-2: #0B4DF5;
+                --color-primary-3: #F64A00;
+
+                --color-theme_color: {{business.theme_color}}; 
+                --color-theme_text_color: {{business.theme_text_color}};
+        
+                --color-buttons_color: {{business.buttons_color}};
+                --color-buttons_hover_color: {{business.buttons_hover_color}};
+                --color-buttons_text_color: {{business.buttons_text_color}};
+        
+                --color-footer_color: {{business.footer_color}};
+                --color-footer_text_color: {{business.footer_text_color}};
+        
+                --color-header_color: {{business.header_color}};
+                --color-header_hover_color: {{business.header_hover_color}};
+                --color-header_text_color: {{business.header_text_color}};
+                
+                --color-banner_color: {{business.banner_color}};
+                --color-banner_text_color: {{business.banner_text_color}};
+                --color-banner_maintext_color: {{business.banner_maintext_color}};
+
+                
+            }
+            </style>
+        {% include 'header.html' %}
+
+        {% block content %}
+        
+        {% endblock content %}
+
+        {% include 'footer.html' %}
+        
+        <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+        <script src="{% static 'js/vendor/jqueryui.js' %}"></script>
+        <script src="{% static 'js/vendor/waypoint.js' %}"></script>
+        <script src="{% static 'js/plugins/swiper.js' %}"></script>
+        <script src="{% static 'js/plugins/counterup.js' %}"></script>
+        <script src="{% static 'js/plugins/sal.min.js' %}"></script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plugins/contact.form.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

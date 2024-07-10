@@ -1,0 +1,110 @@
+{% extends base_template %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+{% for about in abouts %}
+
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image" {% if about.image_breadcrumb %} style="background-image: url({{about.image_breadcrumb.url}});" {% endif %}>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">{% trans "ABOUT" %}</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="{% url 'core:index' %}">{% trans "Home" %}</a>
+                        <span> / </span>
+                        <a href="{% url 'core:about' %}" class="active">{% trans "ABOUT" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rts-about-area rts-section-gap">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image-v-inner">
+                        <div class="image-area">
+                            {% if about.image_high %}
+                            <img class="mt--110 img-1" src="{{about.image_high.url}}" alt="{{business.title}}">
+                            {% endif %}
+                            {% if about.image_low %}
+                            <img class="img-over" src="{{about.image_low.url}}" alt="{{business.title}}">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-progress-inner">
+                        <div class="title-area">
+                            <span>{{about.name}}</span>
+                            <h2 class="title">{{about.title}}
+                            </h2>
+                        </div>
+                        <div class="inner">
+                            <p class="disc">
+                                {{about.about_high|safe}}
+                                {{about.about_low|safe}}
+                            {% comment %} <a href="{% url 'core:contact' %}" class="rts-btn btn-primary">{% trans "CONTACT US" %}</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rts-service-area rts-section-gapBottom">
+        <div class="container-fluid service-main about-service-width-controler">
+            <div class="background-service service-three row">
+                <div class="row g-5">
+                    <div class="rts-title-area service-four text-center pt--40 pt_md--0 mt_sm--0 mt_md--0">
+                        <p class="pre-title">
+                        {% translate "Our Services" %}
+                        </p>
+                        <h2 class="title">{% translate "See all our services" %}</h2>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="single-service-step text-center">
+                            <h6 class="title">
+                            {% translate "SERVICES" %}
+                            </h6>
+                           
+                            <a href="{{about.brochure.url}}" class="rts-btn btn-primary"> {% translate "Read More " %} <i class="fal fa-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="single-service-step text-center">
+                            <h6 class="title">
+                                {% translate "BROCHURE" %}
+                            </h6>
+                            <p class="disc">
+                                {% translate "Download our brochure to see all our services." %}
+                            </p>
+                            <a href="{{about.brochure.url}}" target='_blank' class="rts-btn btn-primary"> {% translate "Downlaod" %} <i class="fal fa-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        
+            <div class="row">
+                <div class="cta-one-bg col-12" {% if about.image_breadcrumb %} style=" background-image: url({{about.image_breadcrumb.url}});"{% endif %}>
+                    <div class="cta-one-inner">
+                        <div class="cta-left">
+                            <h3 class="title animated fadeIn">                               
+                                {% translate "For any information or collaboration requests" %}</h3>
+                        </div>
+                        <div class="cta-right">
+                            <a class="rts-btn btn-white" href="{% url 'core:contact' %}">{% translate "Contact-us" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    {% endfor %}
+{% endblock content %}

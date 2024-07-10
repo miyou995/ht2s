@@ -1,0 +1,332 @@
+
+{% extends base_template %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info for LANGUAGE_CODE as lang %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+{% block content %} 
+   
+    <div class="rts-banner-area rts-banner-one">
+        <div class="swiper mySwiper banner-one">
+            <div class="swiper-wrapper">
+                {% for  slide in slides %}
+                <div class="swiper-slide" style=" background-image: url({{slide.photo.url}});" >
+                    <div class="banner-one-inner {% if current_lang == 'ar' %}text-end{% else %}text-start{% endif %}">
+                        <p class="pre-title">
+                            <span>{% translate "Welcome!" %}</span> {{business.name}}
+                        </p>
+                        <h1 class="title ">{% translate "Enhancing" %} <span> {% translate "Security" %} </span> <br>
+                            {% translate "Measures" %}</h1>
+
+                        <a href="{% url 'core:hiring' %}" class="rts-btn btn-primary color-h-black">{% trans 'Get Quote' %} </a>
+                        <img class="shape-img one" src="{% static 'rtl/images/banner/shape/01.png' %}" alt="banner_business">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="animation-img">
+            <img class="shape-img two" src="{% static 'rtl/images/banner/shape/02.png' %}" alt="banner_business">
+            <img class="shape-img three" src="{% static 'rtl/images/banner/shape/03.png' %}" alt="banner_business">
+        </div>
+    </div>
+    <div class="rts-about-area rts-section-gap bg-about-sm-shape">
+        <div class="container">
+            {% for company in company_first %}
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2 mt_md--50 mt_sm--50">
+                    <div class="rts-title-area">
+                        <p class="pre-title">
+                         <a href="{% url 'core:about' %}"> {% translate " More About Us" %} </a>
+                        </p>
+                        <h2 class="title"> {{company.name}} </h2>
+                    </div>
+                    <div class="about-inner">
+                        <p class="disc">
+                            {{company.about_one|safe}}
+                        </p>
+                        <div class="row about-success-wrapper">
+                            {% for item in  company.items.all|slice:":4" %}
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single">
+                                    <i class="far fa-check"></i>
+                                    <p class="details">{{item.name}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                       
+                        <div class="row about-founder-wrapper align-items-center mt--40">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="author-call-option">
+                                    {% comment %} <img class="authore-call " src="{% static 'rtl/images/contact/shape/02.svg' %}" alt="call_founder"> {% endcomment %}
+                                    <div class="call-details">
+                                        <span>{% translate "Send us an email" %}</span>
+                                        <a href="tel:{{company.email}}">
+                                            <h6 class="title">{{company.email}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_sm--20">
+                                <div class="author-call-option">
+                                    <img class="authore-call" src="{% static 'rtl/images/about/call.svg' %}" alt="call_founder">
+                                    <div class="call-details">
+                                        <span>{% translate "Call us anytime" %}</span>
+                                        <a href="tel:{{business.phone}}">
+                                            <h6 class="title">{{business.phone}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
+                    <div class="about-one-thumbnail">
+                        <img src="{{company.image_one.url}}" alt="about-finbiz">
+                        {% comment %} <img class="small-img" src="{% static 'images/images.jpeg' %}"  alt="finbiz-small"> {% endcomment %}
+                        <div class="experience">
+                            <div class="left single">
+                                <h2 class="title">{% translate "25+" %}</h2>
+                                <p class="time">{% translate "Years" %}</p>
+                            </div>
+                            <div class="right single">
+                                <p class="disc">
+                                    {% translate "Of experience in security service" %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="rts-service-area rts-section-gapBottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="rts-title-area service text-center">
+                        <p class="pre-title">
+                            {% trans 'Our services' %}
+                        </p>
+                        <h2 class="title text-capitalize">{% trans 'Private Security Solutions Offered by HT2S:' %}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid service-main plr--120-service mt--50 plr_md--0 pl_sm--0 pr_sm--0">
+            <div class="background-service row">
+                {% for service in services_one %}
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="service-one-inner one">
+                                {% if service.image %}
+                                    <div class="thumbnail">
+                                        <img src="{{ service.image.url }}" alt="finbiz_service">
+                                    </div>
+                                {% endif %}
+                                <div class="service-details">
+                                    <a href="service-details.html">
+                                        <h5 class="title">{{ service.name }}</h5>
+                                    </a>
+                                    <p class="disc">
+                                        {{ service.description|safe }}
+                                    </p>
+                                    <a class="rts-read-more btn-primary" href="{{ service.get_absolute_url }}">
+                                        <i class="far fa-arrow-right"></i>{% translate "Read More" %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% if forloop.counter|divisibleby:6 and not forloop.last %}
+                        </div>
+                        <div class="background-service row">  
+                    {% endif %}
+                {% endfor %}
+            </div> 
+        </div> 
+    </div>
+    <div class="rts-cta-area ptb--100 rts-cta-bg mt--120 mb--120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cta-three-wrapper">
+                        <h4 class="title">{% translate "Need more information ?" %} <a href="{% url 'core:contact' %}">{% translate "Contact Us" %}</a>
+                        </h4>
+                        <a class="rts-btn btn-secondary-3" href="{% url 'core:contact' %}">{% translate "Let's Work Together" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rts-business-goal mt--0 rts-section-gapBottom">
+        <div class="container">
+            {% for company in company_second %}
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="business-goal-one">
+                        <img src="{{company.image_one.url}}" alt="Business_Goal">
+                        {% comment %} <img class="small" src="{{company.image_one.url}}" alt="Business_Goal"> {% endcomment %}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2 mt_md--50 mt_sm--50">
+                    <div class="rts-title-area">
+                        <p class="pre-title">
+                         <a href="{% url 'core:about' %}"> {% translate " More About Us" %} </a>
+                        </p>
+                        <h2 class="title"> {{company.name}}</h2>
+                       
+                    </div>
+                    <div class="about-inner">
+                        <p class="disc">
+                            {{company.about_one|safe}}
+                        </p>
+                        <div class="row about-success-wrapper">
+                            {% for item in  company.items.all|slice:":4" %}
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single">
+                                    <i class="far fa-check"></i>
+                                    <p class="details">{{item.name}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row about-founder-wrapper align-items-center mt--40">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="author-call-option">
+                                    {% comment %} <img class="authore-call " src="{% static 'rtl/images/contact/shape/02.svg' %}" alt="call_founder"> {% endcomment %}
+                                    <div class="call-details">
+                                        <span>{% translate "Send us an email" %}</span>
+                                        <a href="tel:{{company.email}}">
+                                            <h6 class="title">{{company.email}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_sm--20">
+                                <div class="author-call-option">
+                                    <img class="authore-call" src="{% static 'rtl/images/about/call.svg' %}" alt="call_founder">
+                                   
+                                    <div class="call-details">
+                                        <span>{% translate "Call us anytime" %}</span>
+                                        <a href="tel:{{company.phone}}">
+                                            <h6 class="title">{{company.phone}}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="rts-service-area rts-section-gapBottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="rts-title-area service text-center">
+                        <p class="pre-title">
+                            {% trans 'Our services' %}
+                        </p>
+                        <h2 class="title text-capitalize">{% trans 'Private Security Solutions Offered by GASS:' %}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid service-main plr--120-service mt--50 plr_md--0 pl_sm--0 pr_sm--0">
+            <div class="background-service row">
+                {% for service in services_two %}
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="service-one-inner one">
+                                {% if service.image %}
+                                    <div class="thumbnail">
+                                        <img src="{{ service.image.url }}" alt="finbiz_service">
+                                    </div>
+                                {% endif %}
+                                <div class="service-details">
+                                    <a href="service-details.html">
+                                        <h5 class="title">{{ service.name }}</h5>
+                                    </a>
+                                    <p class="disc">
+                                        {{ service.description|safe }}
+                                    </p>
+                                    <a class="rts-read-more btn-primary" href="{{ service.get_absolute_url }}">
+                                        <i class="far fa-arrow-right"></i>{% translate "Read More" %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% if forloop.counter|divisibleby:6 and not forloop.last %}
+                        </div>
+                        <div class="background-service row">  
+                    {% endif %}
+                {% endfor %}
+            </div> 
+        </div> 
+    </div>
+
+    <div class="rts-feature-areamt--0 rts-section-gapBottom">
+        <div class="container-fluid padding-controler plr--120">
+            <div class="row bg-white-feature  pt--120 pb--120">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="feature-left-area">
+                        <img src="{% static 'images/01.jpg' %}" alt="">
+                    </div>
+                </div> 
+                <div class="col-xl-6 col-lg-12">
+                    <div class="rts-title-area feature text-start pl--30 pl_sm--0">
+                        <p class="pre-title">
+                            {% translate "Collaboration" %} 
+                        </p>
+                        <h2 class="title feature-title">
+                            {% translate "HT2S and GASS" %} </h2>
+                        <p>
+                            {% blocktrans %}
+                            The possibility of collaboration between companies: HT2S and GASS can 
+                            collaborate to offer integrated security solutions, combining the skills and 
+                            resources of both companies to meet the most demanding needs.
+                            {% endblocktrans %}
+                        </p>
+
+                    </div>
+
+                    <div class="feature-one-wrapper pl--30 mt--40 pl_sm--0">
+                        <div class="single-feature-one">
+                            <i class="fal fa-check"></i>
+                            <p> 
+                                {% blocktrans %}
+                                By combining the services of HT2S and GASS,
+                                clients can benefit from comprehensive and personalized 
+                                security solutions, ensuring optimal protection of assets and individuals.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        <div class="single-feature-one">
+                            <i class="fal fa-check"></i>
+                            <p> 
+                                {% blocktrans %}
+                                HT2S and GASS are committed to ensuring the security 
+                                and satisfaction of their clients by providing high-quality 
+                                services and effectively addressing their security needs.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

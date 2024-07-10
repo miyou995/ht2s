@@ -1,0 +1,186 @@
+{% load static %}
+{% load i18n %}
+<header class="header--sticky header-one ">
+    <div class="header-top header-top-one bg-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-xl-block d-none">
+                    <div class="left">
+                        {% if business.email %}
+                            <div class="mail">
+                                <a href="mailto:{{business.email}}"><i class="fal fa-envelope"></i> {{business.email}} </a>
+                            </div>
+                        {% endif %}
+                        {% if business.work_start %}
+                        <div class="working-time">
+                            <p><i class="fal fa-clock"></i> {% translate 'Working' %} :  {{business.work_start}} -  {{business.work_end}}</p>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="col-lg-6 d-xl-block d-none">
+                    <div class="right">
+                        <ul class="top-nav">
+                            <li><a class="nav-item" href="{% url 'core:index' %}">{% translate 'Home' %}</a></li>
+                            <li><a class="nav-item" href="{% url 'core:about' %}">{% translate 'About' %}</a></li>
+                            <li><a class="nav-item" href="{% url 'core:hiring' %}">{% translate 'hiring' %}</a></li> 
+                            <li><a class="nav-item" href="{% url 'core:contact' %}">{% translate 'Contact' %}</a></li>
+                        </ul>
+                        <ul class="social-wrapper-one">
+                            {% if business.facebook %}
+                                <li><a href="{{business.facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                            {% endif %}
+                            {% if business.twitter %}
+                                <li><a href="{{business.twitter}}"><i class="fab fa-x"></i></a></li>
+                            {% endif %}
+                            {% if business.instagram %}
+                                <li><a href="{{business.instagram}}"><i class="fab fa-instagram"></i></a></li>
+                            {% endif %}
+                            {% if business.linkedin %}
+                                <li><a class="mr--0" href="{{business.linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-main-one ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
+                    <div class="thumbnail">
+                        <a href="{% url 'core:index' %}">
+                            {% if  business.logo %}
+                                <img src="{{business.logo.url}}" class="header-logo" alt="{{business.name}}">
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+                <div class=" col-xl-9 col-lg-8 col-md-8 col-sm-8 col-8">
+                    <div class="main-header">
+                        <nav class="nav-main mainmenu-nav d-none d-xl-block">
+                            <ul class="mainmenu">
+                                <li><a class="nav-item" href="{% url 'core:index' %}">{% translate 'Home' %}</a></li>
+                                <li><a class="nav-item" href="{% url 'core:about' %}">{% translate 'About' %}</a></li>
+                                <li><a class="nav-item" href="{% url 'core:services' %}">{% translate 'Services' %}</a></li>
+                                <li><a class="nav-item" href="{% url 'core:hiring' %}">{% translate 'hiring' %}</a></li>
+                                <li><a class="nav-item" href="{% url 'core:contact' %}">{% translate 'Contact' %}</a></li>
+                            </ul>
+                        </nav>
+                        <div class="button-area">
+                            <nav class="nav-main mainmenu-nav d-none d-xl-block">
+                                <ul class="mainmenu">
+                                    <li class="has-droupdown">
+                                        <a class="nav-link" href="#">{{lang.name_local}}</a>
+                                        <ul class="submenu">
+                                            {% for language in languages %}
+                                                {% if language != lang %}
+                                                    <li><a href="{% change_lang request.path language.code %}" class="text-capitalize">{{language.name_local}}</a></li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <a href="{% url 'core:quote' %}" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">{% translate 'Get Quote' %}</a>
+                            <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> 
+
+
+<div id="side-bar" class="side-bar">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <div class="rts-sidebar-menu-desktop">
+            {% if  business.logo %}
+                <a class="logo-1" href="{% url 'core:index' %}"><img class="logo" src="{{business.logo.url}}" alt="{{business.name}}"></a>
+                <a class="logo-2" href="{% url 'core:index' %}"><img class="logo" src="{{business.logo.url}}" alt="{{business.name}}"></a>
+                <a class="logo-3" href="{% url 'core:index' %}"><img class="logo" src="{{business.logo.url}}" alt="{{business.name}}"></a>
+                <a class="logo-4" href="{% url 'core:index' %}"><img class="logo" src="{{business.logo.url}}" alt="{{business.name}}"></a>
+            {% endif %}
+            <div class="body d-none d-xl-block">
+            <p class="disc">
+                {{business.mini_about|safe}}
+            </p>
+            <div class="get-in-touch">
+                <div class="h6 title">{% translate 'Contact-us' %}</div>
+                <div class="wrapper">
+                    <div class="single">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:{{business.phone}}">{{business.phone}}</a>
+                    </div>
+                    <div class="single">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:{{business.email}}">{{business.email}}</a>
+                    </div>
+                    <div class="single">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="{{business.address_link}}">{{business.address}}</a>
+                    </div>
+                </div>
+                <div class="social-wrapper-two menu">
+                    {% if business.facebook %}
+                        <a href="{{business.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                    {% endif %}
+                    {% if business.twitter %}
+                        <a href="{{business.twitter}}"><i class="fab fa-twitter"></i></a>
+                    {% endif %}
+                    {% if business.instagram %}
+                        <a href="{{business.instagram}}"><i class="fab fa-instagram"></i></a>
+                    {% endif %}
+                    {% if business.linkedin %}
+                        <a href="{{business.linkedin}}"><i class="fab fa-linkedin"></i></a> 
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="body-mobile d-block d-xl-none">
+            <nav class="nav-main mainmenu-nav">
+                <ul class="mainmenu">
+                    {% translate 'Contact' %}
+                  
+                    <li class="menu-item"><a class="menu-link" href="{% url 'core:index' %}">{% translate 'Home' %}</a></li>
+                    <li class="menu-item"><a class="menu-link" href="{% url 'core:about' %}">{% translate 'About' %}</a></li>
+                    <li class="menu-item"><a class="menu-link" href="{% url 'core:contact' %}">{% translate 'Contact' %}</a></li>
+                    <li class="menu-item"><a class="menu-link" href="{% url 'core:services' %}">{% translate 'Our Services' %}</a></li>
+                    <li class="menu-item"><a class="menu-link" href="{% url 'core:hiring' %}">{% translate 'Hiring' %}</a></li>
+                </ul>
+            </nav>
+            <div class="social-wrapper-two menu mobile-menu">
+                    {% if business.facebook %}
+                        <a href="{{business.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                    {% endif %}
+                    {% if business.twitter %}
+                        <a href="{{business.twitter}}"><i class="fab fa-twitter"></i></a>
+                    {% endif %}
+                    {% if business.instagram %}
+                        <a href="{{business.instagram}}"><i class="fab fa-instagram"></i></a>
+                    {% endif %}
+                    {% if business.linkedin %}
+                        <a href="{{business.linkedin}}"><i class="fab fa-linkedin"></i></a> 
+                    {% endif %}
+            </div>
+            <a href="{% url 'core:quote' %}" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btnmenu">{% translate 'Get Quote' %}</a>
+        </div>
+    </div>
+</div>
+{% comment %} 
+<div class="search-input-area">
+    <div class="container">
+        <div class="search-input-inner">
+            <div class="input-div">
+                <input id="searchInput1" class="search-input" type="text" placeholder="Search by keyword or #">
+                <button><i class="far fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+</div> {% endcomment %}

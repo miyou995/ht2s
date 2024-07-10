@@ -1,0 +1,120 @@
+{% load static %}
+{% load i18n %}
+
+ <div class="rts-map-area bg-light-white">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="mapdetails-inner-one">
+                    <div class="left-area single-wized">
+                        <h5 class="title details-footer">{% trans 'Contact-us' %}</h5>
+                        <div class="details details-footer">
+                            <p>{% trans 'Phone number ' %}</p>
+                            <a class="number" href="tel:{{business.phone}}">{{business.phone}}</a>
+                            <p>{% trans 'Email ' %}</p>
+                            <a class="number" href="mail:{{business.email}}">{{business.email}}</a>
+                            <p class="time-header">
+                                {% trans 'Assistance hours: ' %}
+                            </p>
+                            <p class="time">
+                               {{business.work_start }} - {{business.work_end}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="right-area single-wized">
+                        <h5 class="title">{% trans 'Address' %}</h5>
+                        <div class="details">
+                            <p>{% trans 'Head office' %}</p>
+                                <a href="{{business.address_link}}">{{business.address}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                {{business.google_maps|safe}}
+            </div>
+        </div>
+
+    </div>
+</div> 
+
+<div class="rts-footer-area footer-one bg-footer-one">
+    <div class="container bg-shape-f1">
+        <div class="row pt--120 pt_sm--80 pb--80 pb_sm--40">
+            <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                <div class="footer-one-single-wized">
+                    <div class="wized-title">
+                        <h5 class="title">{% trans 'Liens rapides' %}</h5>
+                        <img src="{% static 'images/footer/under-title.png' %}" alt="finbiz_footer">
+                    </div>
+                    <div class="quick-link-inner">
+                        <ul class="links">
+                            <li><a  href="{% url 'core:index' %}"><i class="far fa-arrow-right"></i>{% trans 'Home' %}</a></li>
+                            <li><a  href="{% url 'core:about' %}"><i class="far fa-arrow-right"></i>{% trans 'Aabout' %}</a></li>
+                            <li><a  href="{% url 'core:services' %}"><i class="far fa-arrow-right"></i>{% trans 'Our Services' %}</a></li>
+                        </ul>
+                        <ul class="links margin-left-70">
+                            <li><a  href="{% url 'core:contact' %}"><i class="far fa-arrow-right"></i>{% trans 'Contact' %}</a></li>
+                            <li><a  href="{% url 'core:hiring' %}"><i class="far fa-arrow-right"></i>{% trans 'hiring' %}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                <div class="footer-one-single-wized mid-bg">
+                    <div class="wized-title">
+                        <h5 class="title">{% trans 'Opening Hours' %}</h5>
+                        <img src="{% static 'images/footer/under-title.png' %}" alt="{{business.title}}">
+                    </div>
+                    <div class="opening-time-inner">
+                        <div class="single-opening">
+                            <p class="day">{% trans 'Week Days' %}</p>
+                            <p class="time">{{business.work_start }} - {{business.work_end}}</p>
+                        </div>
+                        <a href="{% url 'core:contact' %}" class="rts-btn btn-primary contact-us">{% trans 'Contact-us' %}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                <div class="footer-one-single-wized margin-left-65">
+                    <div class="wized-title">
+                        <h5 class="title">{{business.name}}</h5>
+                        <img src="{% static 'images/footer/under-title.png' %}" alt="{{business.title}}">
+                    </div>
+                    <div class="post-wrapper">
+                           
+                        <div class="single-footer-post mb--30">
+                            <div class="post-right">
+                                <p class="title">{{business.mini_about}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rts-copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <p> {% translate "Copyright" %} &copy;<script>document.write(new Date().getFullYear());</script> {% translate "All rights reserved " %} <a href="https://www.octopus-consulting.com/" target="_blank"> Octopus Consulting</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loader-wrapper">
+    <div class="loader">
+    </div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+</div>
