@@ -10918,6 +10918,7 @@ body {
 }
 @media only screen and (max-width: 1199px) {
   .rts-title-area::after {
+    left: 0;
     font-size: 90px;
   }
 }
@@ -10995,14 +10996,14 @@ body {
 }
 .rts-title-area.feedback::after {
   content: "Testimonial";
-  left: 49%;
+  left: 43%;
   transform: translateX(-50%);
   z-index: -1;
   height: 109px;
 }
 .rts-title-area.feature::after {
-  content: "Features";
-  left: 32%;
+  content: "Collaboration";
+  left: 45%;
   transform: translateX(-50%);
   z-index: -1;
   height: 109px;
@@ -15262,6 +15263,7 @@ body.sal-disabled [data-sal|=flip] {
 }
 
 .main-header {
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -18758,7 +18760,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 .rts-banner-one .swiper-wrapper .swiper-slide {
   position: relative;
 }
-.rts-banner-one .swiper-wrapper .swiper-slide::after {
+/* .rts-banner-one .swiper-wrapper .swiper-slide::after {
   position: absolute;
   content: "";
   left: 0;
@@ -18772,7 +18774,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
   .rts-banner-one .swiper-wrapper .swiper-slide::after {
     display: block;
   }
-}
+} */
 .rts-banner-one .swiper-wrapper .swiper-slide .banner-one-inner {
   position: relative;
   z-index: 1;
@@ -25340,12 +25342,12 @@ p.disc.banner-para {
 .feature-left-area {
   display: flex;
   justify-content: flex-end;
-  padding-right: 83px;
+  /* padding-right: 83px; */
   animation: jump-2 5s linear infinite;
 }
 @media only screen and (max-width: 1199px) {
   .feature-left-area img {
-    width: 80%;
+    /* width: 80%; */
     margin-top: 50px;
     margin-bottom: 60px;
   }

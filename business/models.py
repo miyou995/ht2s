@@ -111,3 +111,8 @@ class Slide(models.Model):
         verbose_name = 'slide'
         verbose_name_plural = 'slides'
     
+
+    def __str__(self):
+        return f"slide id: {self.id}"
+    
+

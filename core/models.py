@@ -22,6 +22,7 @@ CHOICES = (
 
 class Company(models.Model):
     name            = models.CharField('Name', max_length=500)
+    slug            = models.SlugField(max_length=150, unique=True, verbose_name=_("URL"))
     phone           = models.CharField(verbose_name="Téléphone" , max_length=25, null=True, blank=True)
     email           = models.EmailField(verbose_name="email", max_length=50, blank=True)
     image_one       = models.ImageField(upload_to='images/', verbose_name='image_detail_1', blank=True, null=True)
@@ -29,8 +30,10 @@ class Company(models.Model):
     image_two       = models.ImageField(upload_to='images/', verbose_name="image_2", blank=True, null=True)
     about_one       = tinymce_models.HTMLField(verbose_name='Text service', blank=True, null=True)
     about_two       = tinymce_models.HTMLField(verbose_name='Page service ', blank=True, null=True)
+
     def __str__(self):
         return str(self.name)
+    
     def get_absolute_url(self):
         return reverse("core:service_detail", kwargs={"slug": self.slug})
     
@@ -146,3 +149,16 @@ class Quote(models.Model):
     
     def get_total_cost(self):
         return self.surface.price +  self.bien.price + self.formule.price
+    
+
+class Solution(models.Model):
+    name        = models.CharField(_("Nom de la solution"), max_length=50)
+    slug        = models.SlugField(max_length=150, unique=True, verbose_name=_("URL"))
+    title       = models.CharField(_("Grand titre de la solution"), max_length=70, blank=True, null=True)
+    icon        = models.ImageField(upload_to='images/solutions', verbose_name=_("Petite image"), blank=True, null=True)
+    banner      = models.ImageField(upload_to='images/solutions', verbose_name=_("Grande image"), blank=True, null=True)
+    text        = models.TextField(verbose_name="petit texte", blank=True, null=True)
+    description = tinymce_models.HTMLField(verbose_name='Description du service', blank=True, null=True)
+
+    def __str__(self):
+        return self.name

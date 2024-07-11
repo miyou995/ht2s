@@ -1,0 +1,48 @@
+{% extends base_template %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+
+<div class="rts-project-area rts-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row g-5">
+                    {% for solution  in solutions %}
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="rts-product-one">
+                                {% if solution.description %}
+                                    <div class="thumbnail-area">
+                                        <a class="rts-btn btn-primary rounded" href="{{solution.get_absolute_url}}"><i class="far fa-arrow-right"></i></a>
+                                        <img src="{{solution.icon.url}}" alt="solution {{solution.name}}">
+                                    </div>
+                                {% else %}
+                                    <img src="{{solution.icon.url}}" alt="solution {{solution.name}}">
+                                {% endif %}
+                                <div class="product-contact-wrapper">
+                                    {% comment %} <span>Business Solution</span> {% endcomment %}
+                                        {% if solution.description %}
+                                            <a href="{{solution.get_absolute_url}}">
+                                        {% else %}
+                                            <a href="#">
+                                        {% endif %}
+                                        <h5 class="title">{{solution.name}}</h5>
+                                    </a>
+                                    <p class="disc">
+                                        {{solution.text}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- project section end -->
+
+
+{% endblock content %}

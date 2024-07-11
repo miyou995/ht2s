@@ -10,7 +10,7 @@ from django.contrib import messages
 from config import settings 
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from business.models import  Slide
-from core.models import Service, Contact, Quote, Hiring,About, Company
+from core.models import Service, Contact, Quote, Hiring,About, Company, Solution
 from core.forms import ContactForm, QuoteForm, HiringForm
 from django.shortcuts import redirect
 # from django.utils.translation import LANGUAGE_SESSION_KEY
@@ -36,8 +36,11 @@ class IndexView(TemplateView):
         print('cccccc', Service.objects.filter(company__order=1))
         context["services_two"] =  Service.objects.filter(company__order=2)
         context["slides"]   = Slide.objects.all()
-        context["company_first"]   = Company.objects.filter(order=1)
-        context["company_second"]   = Company.objects.filter(order=2)
+        first_company = Company.objects.first()
+        context["company_first"]   = Company.objects.first()
+        context["company_second"]   = None
+        if first_company:
+            context["company_second"]   = Company.objects.exclude(id=first_company.id).last()
         return context
 
 ############### ABOUT ###############
@@ -63,6 +66,20 @@ class ServiceView(ListView):
     model = Service
     context_object_name ="services"
 ##### DETAIL
+
+############### SOLTUIONS ###############
+##### LIST
+class SolutionsListView(ListView):
+    def get_template_names(self):
+        # if self.request.LANGUAGE_CODE == 'ar':
+        #     return ['rtl/services.html']
+        # else:
+        return ['solutions.html']
+    model = Solution
+    context_object_name ="solutions"
+##### DETAIL
+
+
 class ServiceDetail(DetailView):
     model = Service
     def get_template_names(self):

@@ -1,6 +1,6 @@
 
 from django.urls import path, re_path
-from .views import IndexView, AboutView, RecruitingView, ContactView, QuoteoView,  ServiceView, ServiceDetail  
+from .views import IndexView, AboutView, RecruitingView, ContactView, QuoteoView,  ServiceView, ServiceDetail, SolutionsListView  
 from django.urls import path
 from . import views
 
@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('', IndexView.as_view(), name='index'),
     path('services', ServiceView.as_view(), name='services'),
+    path('solutions', SolutionsListView.as_view(), name='solutions'),
     path('about', AboutView.as_view(), name='about'),
     path('service_detail/<slug:slug>/', ServiceDetail.as_view(), name='service_detail'),
     path('hiring', RecruitingView.as_view(), name='hiring'),
