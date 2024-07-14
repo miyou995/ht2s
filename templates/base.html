@@ -4,7 +4,7 @@
 {% get_available_languages as LANGUAGES %}
 {% get_language_info for LANGUAGE_CODE as lang %}
 {% get_language_info_list for LANGUAGES as languages %}
-{% load change_lang %}
+{% load custom_tags %}
 <!DOCTYPE html>
     <html lang="{{ request.LANGUAGE_CODE }}" {% if request.LANGUAGE_CODE == 'ar' %} dir="rtl" {% endif %}>
     <head>

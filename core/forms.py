@@ -33,7 +33,7 @@ class ContactForm(ModelForm) :
                 'email',
                 'phone',
                 'entreprise',
-                'service',
+                # 'service',
                 'subject',
                 'message',)
         
@@ -52,14 +52,13 @@ class ContactForm(ModelForm) :
         self.fields['email'].label = "Email *"
         self.fields['phone'].label = "Phone *"
         self.fields['entreprise'].label = "Company "
-        self.fields['service'].label = "service "
         self.fields['subject'].label = "subject "
         self.fields['message'].label = "message "
         self.fields['username'].widget = forms.HiddenInput()
-        self.fields['service'].widget.attrs.update({
-                "class": "select-form select-contact", 
-                "placeholder" : "Select service"
-            }) 
+        # self.fields['service'].widget.attrs.update({
+        #         "class": "select-form select-contact", 
+        #         "placeholder" : "Select service"
+        #     }) 
         self.fields['message'].widget.attrs.update({
                 "class": "subject", 
             }) 
@@ -162,3 +161,5 @@ class HiringForm(ModelForm) :
         #         "type":"radio",
         #         "placeholder" : "driving licence"
         #     }) 
+
+

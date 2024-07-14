@@ -1,0 +1,113 @@
+{% extends base_template %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image" {% if solution.image_breadcrumb %} style=" background-image: url({{solution.image_breadcrumb.url}});" {% endif %}>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">{% translate "Service Details" %}</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="{% url 'core:index' %}">{% translate "Home" %}</a>
+                        <span> / </span>
+                        <a href="#" class="active">{% translate "Service Details" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rts-service-details-area rts-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <div class="service-detials-step-1">
+                        {% if solution.image_high %} 
+                        <div class="thumbnail">
+                            <img src="{{solution.image_high.url}}" alt="business-area">
+                        </div>
+                        {% endif %}
+                        <h4 class="title"> {{solution.title}} </h4>
+                        
+                        {% if solution.description %}
+                            <p class="disc">
+                                {{solution.description|safe}}
+                            </p>
+                        {% endif %}
+                        <p class="disc">
+                            {{solution.about_high|safe}}
+                        </p>
+                    </div>
+           
+                    <div class="service-detials-step-3 mt--70 mt_md--50">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                                {% if solution.image_high %} 
+                                <div class="thumbnail sm-thumb-service">
+                                    <img src="{{solution.image_low.url}}" alt="Service">
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 mb_md--20 mb_sm--20">
+                                {{solution.about_low|safe}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12 mt_lg--60 pl--50 pl_md--0 pl-lg-controler pl_sm--0">
+                    <div class="rts-single-wized Categories service">
+                        <div class="wized-header">
+                            <h5 class="title">
+                                {% translate "Services" %}
+                            </h5>
+                        </div>
+                        <div class="wized-body">
+                            {% for service in  services %}
+                            <ul class="single-categories">
+                                <li><a href="{{ solution.get_absolute_url }}">{{ solution.name }} <i class="far fa-long-arrow-right"></i></a></li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="rts-single-wized download service">
+                        <div class="wized-header">
+                            <h5 class="title">{% translate "Download" %}</h5>
+                        </div>
+                        <div class="wized-body">
+                            <div class="single-download-area">
+                                <div class="mid">
+                                    <h6 class="title">
+                                        {% translate "Our Brochures" %}
+                                    </h6>
+                                    <span>{% translate "Downlaod" %}</span>
+                                </div> 
+                                {% for about in abouts %}
+                                    <a class=" rts-btn btn-primary" href="{{about.brochure.url}}" target="_blank"><i class="fal fa-arrow-right"></i></a>
+                                {% endfor %}
+                            </div>
+                            <div class="single-download-area">
+                                <div class="mid">
+                                    <h6 class="title">
+                                       {% translate "Company Details" %}
+                                    </h6>
+                                </div>
+                                <a class=" rts-btn btn-primary" href="{% url 'core:about' %}"><i class="fal fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rts-single-wized contact service">
+                        <div class="wized-header">
+                            <a href="#"><img src="{{business.logo.url}}" alt="Business_logo"></a>
+                        </div>
+                        <div class="wized-body">
+                            <h5 class="title">{% translate "Need Help? We Are Here To Help You" %}</h5>
+                            <a class="rts-btn btn-primary" href="{% url 'core:contact' %}">{% translate "Contact Us" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -89,7 +89,7 @@ class Contact(models.Model):
     entreprise      = models.CharField(max_length=150, verbose_name="Nom de l'entreprise", null=True, blank=True)
     email           = models.EmailField(verbose_name="E-mail", null=True, blank=True)
     phone           = models.CharField(verbose_name="Téléphone" , max_length=25, null=True, blank=True)
-    service         = models.ForeignKey(Service, verbose_name='service', null=True, blank=True, on_delete=models.CASCADE)
+    service         = models.ForeignKey(Service, verbose_name='service', null=True, blank=True, on_delete=models.SET_NULL)
     subject         = models.CharField(max_length=150, verbose_name='sujet', null=True, blank=True)
     message         = models.TextField(null=True, blank=True)
     class Meta:
@@ -158,7 +158,11 @@ class Solution(models.Model):
     icon        = models.ImageField(upload_to='images/solutions', verbose_name=_("Petite image"), blank=True, null=True)
     banner      = models.ImageField(upload_to='images/solutions', verbose_name=_("Grande image"), blank=True, null=True)
     text        = models.TextField(verbose_name="petit texte", blank=True, null=True)
+    is_active   = models.BooleanField(_("Activer la solution"), default=True)
     description = tinymce_models.HTMLField(verbose_name='Description du service', blank=True, null=True)
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("core:solution_detail", kwargs={"slug": self.slug})

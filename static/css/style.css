@@ -15280,7 +15280,7 @@ body.sal-disabled [data-sal|=flip] {
   margin-right: 36px;
 }
 .main-header .nav-main ul li a {
-  padding: 48px 0;
+  padding: 25px 0;
   display: block;
   color: #1C2539;
   font-size: 16px;
@@ -15319,12 +15319,12 @@ body.sal-disabled [data-sal|=flip] {
 @media screen and (max-width: 1199px) {
   .main-header .button-area {
     margin-left: 16px;
-    margin: 33px 0;
+    /* margin: 33px 0; */
   }
 }
 @media only screen and (max-width: 479px) {
   .main-header .button-area {
-    margin: 10px 0;
+    /* margin: 10px 0; */
   }
 }
 .main-header .button-area button.menu .menu-dark {
@@ -15440,7 +15440,7 @@ body.sal-disabled [data-sal|=flip] {
   width: 100%;
 }
 .header-three .main-header .nav-main ul li a {
-  padding: 42px 0;
+  padding: 25px 0;
 }
 .header-three .main-header .nav-main ul li a::after {
   bottom: 46px;

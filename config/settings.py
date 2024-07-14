@@ -86,7 +86,7 @@ TEMPLATES = [
                 "django.templatetags.static",
                 "django.templatetags.i18n",
                 "django.templatetags.l10n",
-                "core.templatetags.change_lang",
+                "core.templatetags.custom_tags",
             ],
         },
     },

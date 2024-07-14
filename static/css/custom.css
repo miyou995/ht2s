@@ -3,6 +3,9 @@
     display: block;
     max-width: max-content;
 }
+.header-main-one .thumbnail img{
+    max-height: 80px;
+}
 .bg-1{
     background-color: var( --color-theme_color)!important;
     /* color: var( --color-theme_color); */

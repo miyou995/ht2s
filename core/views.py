@@ -80,6 +80,12 @@ class SolutionsListView(ListView):
 ##### DETAIL
 
 
+class SolutionsDetailView(DetailView):
+    model = Solution
+    template_name = "solution-detail.html"
+    context_object_name ="solution"
+
+
 class ServiceDetail(DetailView):
     model = Service
     def get_template_names(self):
@@ -113,12 +119,12 @@ class ContactView(SuccessMessageMixin, FormView):
     def form_valid(self, form):
         if form.is_valid() :
             self.object = form.save()
-            message = _("We received your message, you will be contacted you soon.")
+            message = _("We received your message, you will be contacted soon.")
             messages.success(self.request, str(message))
         else:
             message = _("Error occures when submitting the message, please check the required fields.")
             messages.error(self.request, str(message))
-        return HttpResponse(status=204) 
+        return HttpResponseRedirect(self.get_success_url())
     
 ############### QUOTE ###############
 class QuoteoView(SuccessMessageMixin, CreateView):
