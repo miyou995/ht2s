@@ -1,6 +1,9 @@
 venv/*
 venv/
 /venv/*
+media/*
+media/
+/media/*
 *.scss
 debug.log/*
 debug.log/
@@ -13,10 +16,11 @@ debug.log
 *.pot
 *.pyc
 __pycache__
+media
 backups/*
 # Backup files # 
 *.bak 
-
+db.sqlite3
 # If you are using PyCharm # 
 # User-specific stuff
 .idea/**/workspace.xml
@@ -44,7 +48,7 @@ backups/*
 
 # File-based project format
 *.iws
-
+assets/
 # IntelliJ
 out/
 ../venv/

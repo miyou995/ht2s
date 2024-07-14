@@ -35,7 +35,7 @@ class IndexView(TemplateView):
         context["services_one"] =  Service.objects.filter(company__order=1)
         print('cccccc', Service.objects.filter(company__order=1))
         context["services_two"] =  Service.objects.filter(company__order=2)
-        context["slides"]   = Slide.objects.all()
+        context["slides"]   = Slide.objects.filter(actif=True)
         first_company = Company.objects.first()
         context["company_first"]   = Company.objects.first()
         context["company_second"]   = None
