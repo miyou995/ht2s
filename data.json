@@ -1,0 +1,764 @@
+[
+{
+    "model": "core.company",
+    "pk": 1,
+    "fields": {
+        "name": "The SARL High Technology Security Solutions 'GASS'",
+        "slug": "two",
+        "phone": "0554575859",
+        "email": "admin@admin.com",
+        "image_one": "images/47056_pSocCI8.jpg",
+        "order": 1,
+        "image_two": "images/about-1_copy_jC0w9yF.jpg",
+        "about_one": "<div>\r\n<div>The company GASS was founded by a special elite group of men from the armed forces and police known for their bravery, competence,</div>\r\n<div>and discipline in the field of security and surveillance. They are assisted by a professional team of administrators and technicians.</div>\r\n</div>",
+        "about_two": ""
+    }
+},
+{
+    "model": "core.company",
+    "pk": 2,
+    "fields": {
+        "name": "The SARL High Technology Security Solutions 'HT2S'",
+        "slug": "one",
+        "phone": "+213 20 05 71 24",
+        "email": "dsi@fs-algeria.com",
+        "image_one": "images/600-800.png",
+        "order": 1,
+        "image_two": "images/600-800_d1R7e6s.png",
+        "about_one": "<div>\r\n<div>Thanks to its type 1 approval issued by Ministry of Interior, local collectivities, and Territory planning,</div>\r\n<div>HT2S has full control over the project management process related to security,</div>\r\n<div>thus providing a guarantee of quality and compliance.</div>\r\n</div>",
+        "about_two": ""
+    }
+},
+{
+    "model": "core.companyitem",
+    "pk": 1,
+    "fields": {
+        "company": 1,
+        "name": "Personalized Support: We consider personalized support as an essential security procedure for individuals exposed to personal risks.",
+        "description": ""
+    }
+},
+{
+    "model": "core.companyitem",
+    "pk": 2,
+    "fields": {
+        "company": 1,
+        "name": "Business Surveillance:  We provide surveillance for corporate headquarters, field work sites, as well as public and private banks.",
+        "description": ""
+    }
+},
+{
+    "model": "core.companyitem",
+    "pk": 3,
+    "fields": {
+        "company": 1,
+        "name": "Surveillance and Security Services:  We offer surveillance, security, and transportation services for money and fragile materials.",
+        "description": ""
+    }
+},
+{
+    "model": "core.companyitem",
+    "pk": 4,
+    "fields": {
+        "company": 2,
+        "name": "Belongs to the Full Service group",
+        "description": ""
+    }
+},
+{
+    "model": "core.companyitem",
+    "pk": 5,
+    "fields": {
+        "company": 2,
+        "name": "Is authorized to import, manufacture, market, install, and maintain various security equipment thanks to its type 1 approval.",
+        "description": ""
+    }
+},
+{
+    "model": "core.companyitem",
+    "pk": 6,
+    "fields": {
+        "company": 2,
+        "name": "Offers comprehensive solutions to meet the needs of its clients.",
+        "description": ""
+    }
+},
+{
+    "model": "core.companyitem",
+    "pk": 7,
+    "fields": {
+        "company": 2,
+        "name": "Specializes in security management.",
+        "description": ""
+    }
+},
+{
+    "model": "core.about",
+    "pk": 1,
+    "fields": {
+        "name": "SARL High Technology Security Solutions 'HT2S':",
+        "image_breadcrumb": "images/about.jpg",
+        "brochure": "files/David_Thomas_Andrew_Hunt_-_The_Pragmatic_Programmer_-_20th_Anniversary_Edition-Pea_91jxth9.pdf",
+        "image_high": "images/47056.jpg",
+        "image_low": "images/300x500_fHycR81.png",
+        "title": "Specializes in security management.",
+        "about_high": "<p>Thanks to its type 1 approval issued by Ministry of<br />Interior, local collectivities, and Territory planning,<br />HT2S has full control over the project management<br />process related to security, thus providing a guarantee<br />of quality and compliance.</p>",
+        "about_low": ""
+    }
+},
+{
+    "model": "core.service",
+    "pk": 1,
+    "fields": {
+        "slug": "video-surveillance",
+        "name": null,
+        "name_en": null,
+        "name_ar": null,
+        "name_fr": null,
+        "company": 2,
+        "image_breadcrumb": "",
+        "description": "Video SurveillanceVideo Surve",
+        "image": "images/s.png",
+        "image_high": "",
+        "image_low": "",
+        "about_high": null,
+        "about_high_en": null,
+        "about_high_ar": null,
+        "about_high_fr": null,
+        "about_low": "<p>Video Surveillance &nbsp;Video Surveillance&nbsp;</p>"
+    }
+},
+{
+    "model": "core.service",
+    "pk": 2,
+    "fields": {
+        "slug": "training-and-development",
+        "name": null,
+        "name_en": null,
+        "name_ar": null,
+        "name_fr": null,
+        "company": 2,
+        "image_breadcrumb": "",
+        "description": "Video SurveillanceVideo Surve",
+        "image": "images/s_cxoPHG2.png",
+        "image_high": "",
+        "image_low": "",
+        "about_high": null,
+        "about_high_en": null,
+        "about_high_ar": null,
+        "about_high_fr": null,
+        "about_low": ""
+    }
+},
+{
+    "model": "core.service",
+    "pk": 3,
+    "fields": {
+        "slug": "e-commerce",
+        "name": null,
+        "name_en": null,
+        "name_ar": null,
+        "name_fr": null,
+        "company": 2,
+        "image_breadcrumb": "",
+        "description": "Dolore consequatur minim vero repudiandae sunt aliquip blanditiis ea",
+        "image": "images/s_L8d4qjm.png",
+        "image_high": "",
+        "image_low": "",
+        "about_high": null,
+        "about_high_en": null,
+        "about_high_ar": null,
+        "about_high_fr": null,
+        "about_low": ""
+    }
+},
+{
+    "model": "core.service",
+    "pk": 4,
+    "fields": {
+        "slug": "e-st",
+        "name": null,
+        "name_en": null,
+        "name_ar": null,
+        "name_fr": null,
+        "company": 1,
+        "image_breadcrumb": "",
+        "description": "Ut doloribus beatae id dolor quos incidunt",
+        "image": "images/s_tie7V3T.png",
+        "image_high": "",
+        "image_low": "",
+        "about_high": null,
+        "about_high_en": null,
+        "about_high_ar": null,
+        "about_high_fr": null,
+        "about_low": ""
+    }
+},
+{
+    "model": "core.service",
+    "pk": 5,
+    "fields": {
+        "slug": "Reagan-Whitley",
+        "name": null,
+        "name_en": null,
+        "name_ar": null,
+        "name_fr": null,
+        "company": 2,
+        "image_breadcrumb": "",
+        "description": "Dignissimos molestiae laboriosam error sint quasi ipsum fugiat expedita error quas et ut dolorum sequi omnis mollit ad",
+        "image": "images/s_qIzDjtn.png",
+        "image_high": "",
+        "image_low": "",
+        "about_high": null,
+        "about_high_en": null,
+        "about_high_ar": null,
+        "about_high_fr": null,
+        "about_low": ""
+    }
+},
+{
+    "model": "core.service",
+    "pk": 6,
+    "fields": {
+        "slug": "Leandra-Murphy",
+        "name": null,
+        "name_en": null,
+        "name_ar": null,
+        "name_fr": null,
+        "company": 2,
+        "image_breadcrumb": "",
+        "description": "Soluta facilis sit et repudiandae laboris inventore sunt laborum Est dolorem dolorem consequatur in sunt",
+        "image": "images/s_najcHDb.png",
+        "image_high": "",
+        "image_low": "",
+        "about_high": null,
+        "about_high_en": null,
+        "about_high_ar": null,
+        "about_high_fr": null,
+        "about_low": ""
+    }
+},
+{
+    "model": "core.service",
+    "pk": 7,
+    "fields": {
+        "slug": "Sheila-Thompson",
+        "name": null,
+        "name_en": null,
+        "name_ar": null,
+        "name_fr": null,
+        "company": 2,
+        "image_breadcrumb": "images/Riode-Ultimate-eCommerce-HTML-Template-Preview-ThemeForest_o8ZuNvW.png",
+        "description": "Dolore voluptates sed illum excepturi quos eos in aliquam vitae velit velit asperiores iure molestias nisi iste deserunt adipisci",
+        "image": "images/s_Saui8XL.png",
+        "image_high": "images/entete_comment_choisir_societe_securite_z9oD7pU.jpg",
+        "image_low": "images/entete_comment_choisir_societe_securite_EBBEkfH.jpg",
+        "about_high": null,
+        "about_high_en": null,
+        "about_high_ar": null,
+        "about_high_fr": null,
+        "about_low": "<p>Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero</p>\r\n<p>Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero&nbsp;</p>\r\n<ul>\r\n<li>Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero<br /><br />Sagitis himos pulvinar morb socis laoreet</li>\r\n<li>posuere enim non auctor etiam pretium libero</li>\r\n<li><br />Sagitis himos pulvinar morb socis laoreet</li>\r\n<li>posuere enim non auctor etiam pretium libero</li>\r\n</ul>"
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 1,
+    "fields": {
+        "name": "Video Surveillance",
+        "name_en": "Video Surveillance",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "vid",
+        "title": "Video Surveillance",
+        "title_en": "Video Surveillance",
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "images/solutions/image56.jpg",
+        "banner": "",
+        "text": "HT2S offers video surveillance solutions tailored to all types of sites, ensuring effective monitoring for businesses and individuals (ERP/IHG/industrial/domestic).",
+        "text_en": "HT2S offers video surveillance solutions tailored to all types of sites, ensuring effective monitoring for businesses and individuals (ERP/IHG/industrial/domestic).",
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 2,
+    "fields": {
+        "name": "access-control",
+        "name_en": "access-control",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "access-control",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "images/solutions/image60.jpeg",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 3,
+    "fields": {
+        "name": "intrusion-prevention",
+        "name_en": "intrusion-prevention",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "intrusion-prevention",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "images/solutions/image68.jpeg",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 4,
+    "fields": {
+        "name": "fire-protection",
+        "name_en": "fire-protection",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "fire-protection",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "images/solutions/image76.png",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 5,
+    "fields": {
+        "name": "telecommunication-system",
+        "name_en": "telecommunication-system",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "telecommunication-system",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 6,
+    "fields": {
+        "name": "optical-equipment-system",
+        "name_en": "optical-equipment-system",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "optical-equipment-system",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 7,
+    "fields": {
+        "name": "binoculars",
+        "name_en": "binoculars",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "binoculars",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 8,
+    "fields": {
+        "name": "specialized-vehicles",
+        "name_en": "specialized-vehicles",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "specialized-vehicles",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 9,
+    "fields": {
+        "name": "it-solution-data-center",
+        "name_en": "it-solution-data-center",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "it-solution-data-center",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 10,
+    "fields": {
+        "name": "after-sales-service",
+        "name_en": "after-sales-service",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "after-sales-service",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 11,
+    "fields": {
+        "name": "private-security-training-center-in-algeria",
+        "name_en": "private-security-training-center-in-algeria",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "private-security-training-center-in-algeria",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 12,
+    "fields": {
+        "name": "canine-reproduction-training-center",
+        "name_en": "canine-reproduction-training-center",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "canine-reproduction-training-center",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 13,
+    "fields": {
+        "name": "certification-center-in-information-security-for",
+        "name_en": "certification-center-in-information-security-for",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "certification-center-in-information-security-for",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 14,
+    "fields": {
+        "name": "school-of-computer-security",
+        "name_en": "school-of-computer-security",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "school-of-computer-security",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 15,
+    "fields": {
+        "name": "database-of-suppliers-in-services-and-products",
+        "name_en": "database-of-suppliers-in-services-and-products",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "database-of-suppliers-in-services-and-products",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "core.solution",
+    "pk": 16,
+    "fields": {
+        "name": "aerospace-services-provision",
+        "name_en": "aerospace-services-provision",
+        "name_ar": null,
+        "name_fr": null,
+        "slug": "aerospace-services-provision",
+        "title": null,
+        "title_en": null,
+        "title_ar": null,
+        "title_fr": null,
+        "icon": "",
+        "banner": "",
+        "text": null,
+        "text_en": null,
+        "text_ar": null,
+        "text_fr": null,
+        "is_active": true,
+        "description": null,
+        "description_en": null,
+        "description_ar": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "business.business",
+    "pk": 1,
+    "fields": {
+        "name": "SARL HIGH SECURITY SOLUTIONS",
+        "logo": "images/logos/logo_ZVjMMK8.png",
+        "logo_negatif": "images/slides/logo.png",
+        "favicon": "images/logos/favicon_cCjKj8f.png",
+        "title": "SARL HIGH SECURITY SOLUTIONS",
+        "address": "Les Vergers, Chemin Les Oliviers Lot N°04, Birkhad",
+        "address_link": "",
+        "email": "dsi@fs-algeria.com",
+        "email2": "ht2s@fs-algeria.com",
+        "phone": "+213 20 05 71 24",
+        "phone2": "",
+        "phone3": "",
+        "work_start": "08:30:00",
+        "work_end": "17:30:00",
+        "about": "",
+        "conditions": "",
+        "mini_about": "",
+        "facebook": "https://www.facebook.com/unibrandzcom?_rdc=1&_rdr",
+        "instagram": "https://www.facebook.com/unibrandzcom?_rdc=1&_rdr",
+        "tiktok": null,
+        "twitter": null,
+        "linkedin": null,
+        "youtube": null,
+        "chat_code": "",
+        "pixel": "",
+        "analytics": "",
+        "meta_title": null,
+        "meta_description": "",
+        "meta_keyword": null,
+        "contact_message": "",
+        "google_maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51328.26146503337!2d2.7589913942712645!3d36.4813213821967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128f0c66865a4cd1%3A0xccfcf9c073646dfe!2sBlida!5e0!3m2!1sen!2sdz!4v1717425506444!5m2!1sen!2sdz\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "theme_color": "#DB2445FF",
+        "theme_text_color": "#FFFFFFFF",
+        "header_color": "#FFFFFFFF",
+        "header_hover_color": "#AB257BFF",
+        "header_text_color": "#000000FF",
+        "footer_color": "#CC0606FF",
+        "footer_text_color": "#FFFFFFFF",
+        "buttons_color": "#011627FF",
+        "buttons_hover_color": "#067FE15F",
+        "buttons_text_color": "#FFFFFFFF",
+        "banner_color": "#FFE4928B",
+        "banner_text_color": "#1241FFFF",
+        "banner_maintext_color": "#FFE492FF"
+    }
+},
+{
+    "model": "business.slide",
+    "pk": 1,
+    "fields": {
+        "photo": "slides/0-Banner_homepage.png",
+        "actif": true
+    }
+},
+{
+    "model": "business.slide",
+    "pk": 2,
+    "fields": {
+        "photo": "slides/securite-cynophile-2-1.png",
+        "actif": false
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$St28CkcV9a4AN6wd3FpiJD$cwPMsbUhWlRH0Y6++6gu8qtoE6fI/OHbq5o0Ux4cfI4=",
+        "last_login": "2024-08-04T11:43:43.490Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-05-30T10:19:39.942Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+
+]

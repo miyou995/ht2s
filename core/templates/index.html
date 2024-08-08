@@ -12,18 +12,20 @@
     <div class="rts-banner-area rts-banner-one">
         <div class="swiper mySwiper banner-one">
             <div class="swiper-wrapper">
-                {% for  slide in slides %}
-                <div class="swiper-slide" >
-                    <img class="img-fluid" src="{{slide.photo.url}}" alt="banner_business" >
-                    {% comment %} <div class="banner-one-inner {% if current_lang == 'ar' %}text-end{% else %}text-start{% endif %}">
-                        <p class="pre-title">
-                            <span>{% translate "Welcome!" %}</span> {{business.name}}
-                        </p>
-                        <h1 class="title ">{% translate "Enhancing" %} <span> {% translate "Security" %} </span> <br> {% translate "Measures" %}</h1>
-                        <a href="{% url 'core:hiring' %}" class="rts-btn btn-primary color-h-black">{% trans 'Get Quote' %} </a>
-                        <img class="shape-img one" src="{% static 'rtl/images/banner/shape/01.png' %}" alt="banner_business">
-                    </div> {% endcomment %}
-                </div>
+                {% for slide in slides %}
+                    {% if slide.photo %}
+                        <div class="swiper-slide" >
+                            <img class="img-fluid" src="{{slide.photo.url}}" alt="banner_business" >
+                            {% comment %} <div class="banner-one-inner {% if current_lang == 'ar' %}text-end{% else %}text-start{% endif %}">
+                                <p class="pre-title">
+                                    <span>{% translate "Welcome!" %}</span> {{business.name}}
+                                </p>
+                                <h1 class="title ">{% translate "Enhancing" %} <span> {% translate "Security" %} </span> <br> {% translate "Measures" %}</h1>
+                                <a href="{% url 'core:hiring' %}" class="rts-btn btn-primary color-h-black">{% trans 'Get Quote' %} </a>
+                                <img class="shape-img one" src="{% static 'rtl/images/banner/shape/01.png' %}" alt="banner_business">
+                            </div> {% endcomment %}
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
             <div class="swiper-pagination"></div>
@@ -39,7 +41,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2 mt_md--50 mt_sm--50">
                     <div class="rts-title-area">
                         <p class="pre-title">
-                         <a href="{% url 'core:about' %}"> {% translate "More About Us" %} </a>
+                            <a href="{% url 'core:about' %}"> {% translate "More About Us" %} </a>
                         </p>
                         <h2 class="title"> {{company_first.name}} </h2>
                     </div>
