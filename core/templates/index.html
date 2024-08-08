@@ -162,13 +162,12 @@
             </div>
         </div>
     </div>
-    <div class="rts-business-goal mt--0 rts-section-gapBottom mt--120 mb--120">
+    {% comment %} <div class="rts-business-goal mt--0 rts-section-gapBottom mt--120 mb--120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="business-goal-one">
                         <img src="{{company_first.image_one.url}}" alt="Business_Goal">
-                        {% comment %} <img class="small" src="{{company_first.image_one.url}}" alt="Business_Goal"> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2 mt_md--50 mt_sm--50">
@@ -195,7 +194,6 @@
                         <div class="row about-founder-wrapper align-items-center mt--40">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="author-call-option">
-                                    {% comment %} <img class="authore-call " src="{% static 'rtl/images/contact/shape/02.svg' %}" alt="call_founder"> {% endcomment %}
                                     <div class="call-details">
                                         <span>{% translate "Send us an email" %}</span>
                                         <a href="tel:{{company_first.email}}">
@@ -220,7 +218,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
 
     {% comment %} <div class="rts-service-area rts-section-gapBottom">
         <div class="container">
